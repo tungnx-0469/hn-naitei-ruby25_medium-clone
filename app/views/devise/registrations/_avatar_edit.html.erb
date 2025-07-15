@@ -1,0 +1,20 @@
+<div data-controller="avatar" class="avatar-wrapper">
+  <%= label_tag :avatar_upload, class: "position-relative d-inline-block" do %>
+    <% if resource.avatar.attached? && resource.avatar.blob.persisted? %>
+      <%= image_tag resource.avatar, data: { avatar_target: "preview" } %>
+    <% else %>
+      <%= image_tag Settings.default_avatar, data: { avatar_target: "preview" } %>
+    <% end %>
+    <div class="edit-overlay rounded-circle position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 text-white d-flex flex-column justify-content-center align-items-center gap-1">
+      <%= bootstrap_icon "pencil-fill", height: Settings.default.view.edit_profile.icon_size, class:"action-logo" %>
+      <span class="fw-semibold small"><%= t "common.edit" %></span>
+    </div>
+  <% end %>
+
+  <%= form.file_field :avatar, id: :avatar_upload, class: "d-none",
+    data: {
+      avatar_target: "input",
+      action: "change->avatar#preview"
+    }
+  %>
+</div>

@@ -24,3 +24,6 @@ vi:
     vietnamese: "Tiếng Việt"
   msg:
     you_sure: "Bạn có chắc không?"
+    invalid_image: "Hình ảnh không hợp lệ. Vui lòng chọn một hình ảnh có định dạng hợp lệ (JPEG, PNG, GIF)."
+    image_too_large: "Hình ảnh quá lớn. Vui lòng chọn một hình ảnh có kích thước nhỏ hơn 5MB."
+    invalid_phone_number: "Số điện thoại không hợp lệ. Vui lòng nhập một số điện thoại hợp lệ."
