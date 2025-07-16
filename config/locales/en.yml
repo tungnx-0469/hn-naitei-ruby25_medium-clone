@@ -1,14 +1,38 @@
 en:
   header:
     home: "Home"
-    edit_profile: "Edit Profile"
+    profile: "My Profile"
     login: "Login"
     logout: "Logout"
     sign_up: "Sign Up"
     english: "English"
     vietnamese: "Vietnamese"
+  common:
+    save: "Save"
+    cancel: "Cancel"
+    delete: "Delete"
+    edit: "Edit"
+    update: "Update"
+    detail: "Detail"
+    back: "Back"
+    search: "Search"
+    no_results: "No results found"
+  static_page:
+    home:
+      people_may_interested: "People you may be interested in"
+  profile:
+    show:
+      personal_info: "Personal Information"
+      articles: "Articles"
+      followers: "Followers"
+      following: "Following"
+      phone: "Phone"
+      address: "Address"
+      birthday: "Birthday"
+      about_me: "About Me"
   msg:
     you_sure: "Are you sure?"
     invalid_image: "Invalid image. Please select a valid image format (JPEG, PNG, GIF)."
     image_too_large: "Image too large. Please select an image smaller than 5"
     invalid_phone_number: "Invalid phone number. Please enter a valid phone number."
+    user_not_found: "User not found. Please check the user ID and try again."

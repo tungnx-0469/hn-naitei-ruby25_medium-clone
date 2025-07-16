@@ -1,0 +1,27 @@
+<div class="user-card">
+  <div class="card-header">
+      <div class="user-info">
+          <div class="avatar-container">
+              <% if user.avatar.attached? && user.avatar.blob.persisted? %>
+                  <%= image_tag user.avatar, class: "user-avatar", alt: "#{user.username}'s avatar" %>
+              <% else %>
+                  <%= image_tag Settings.default_avatar, class: "user-avatar", alt: "Default avatar" %>
+              <% end %>
+          </div>
+          <div class="user-details">
+              <h5><%= user.username %></h5>
+              <p class="user-email"><%= user.email %></p>
+          </div>
+      </div>
+      <%= link_to profile_path(user), class: "detail-btn" do %>
+          <%= bootstrap_icon "eye", height: Settings.default.view.edit_profile.icon_size %>
+          <%= t("common.detail") %>
+      <% end %>
+  </div>
+  
+  <div class="card-body">
+      <div class="user-bio">
+          <%= user.bio.present? ? user.bio : '' %>
+      </div>
+  </div>
+</div>

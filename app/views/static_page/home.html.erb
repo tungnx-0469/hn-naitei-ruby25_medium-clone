@@ -1,0 +1,4 @@
+<div class="ms-auto col-4 d-flex flex-column gap-3">
+  <h4 class="fw-bold fs-5"><%= t(".people_may_interested") %></h4>
+  <%= render partial: "shared/user_card", collection: @users, as: :user %>
+</div>

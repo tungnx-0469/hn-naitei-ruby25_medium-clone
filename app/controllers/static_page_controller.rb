@@ -1,3 +1,5 @@
 class StaticPageController < ApplicationController
-  def home; end
+  def home
+    @users = User.recommend_users current_user
+  end
 end
