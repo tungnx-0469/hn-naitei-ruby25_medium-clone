@@ -9,3 +9,6 @@ en:
     vietnamese: "Vietnamese"
   msg:
     you_sure: "Are you sure?"
+    invalid_image: "Invalid image. Please select a valid image format (JPEG, PNG, GIF)."
+    image_too_large: "Image too large. Please select an image smaller than 5"
+    invalid_phone_number: "Invalid phone number. Please enter a valid phone number."

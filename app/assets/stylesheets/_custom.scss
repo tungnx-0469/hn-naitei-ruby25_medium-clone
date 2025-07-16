@@ -1,0 +1,25 @@
+.avatar-wrapper {
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-wrapper img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar-wrapper label {
+  cursor: pointer;
+}
+
+.edit-overlay {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.avatar-wrapper label:hover .edit-overlay {
+  opacity: 1;
+}

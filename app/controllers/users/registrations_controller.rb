@@ -3,6 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [ :create ]
   before_action :configure_account_update_params, only: [ :update ]
+  before_action :authorize_account_modify, only: %i[ edit update destroy ]
 
   # GET /resource/sign_up
   # def new
@@ -38,16 +39,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
-
-  # If you have extra params to permit, append them to the sanitizer.
+  protected
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [ :username ])
   end
 
-  # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: User::USER_UPDATE_PERRRMITED_ATTRIBUTES)
+    devise_parameter_sanitizer.permit(:account_update, keys: User::USER_UPDATE_PERMITTED_ATTRIBUTES)
+  end
+
+  def authorize_account_modify
+    authorize! :modify, resource
   end
 
   # The path used after sign up.
