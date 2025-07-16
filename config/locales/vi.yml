@@ -2,6 +2,8 @@ vi:
   activerecord:
     models:
       user: "Người dùng"
+      article: "Bài viết"
+      comment: "Bình luận"
     attributes:
       user: # Or whatever your resource_name is (e.g., admin)
         username: "Tên đăng nhập"
@@ -14,6 +16,11 @@ vi:
         phone_number: "Số điện thoại"
         date_of_birth: "Ngày sinh"
         bio: "Mô tả"
+      article:
+        title: "Tiêu đề"
+        content: "Nội dung"
+      comment:
+        content: "Nội dung"
   header:
     home: "Trang chủ"
     profile: "Hồ sơ của tôi"
@@ -32,6 +39,7 @@ vi:
     back: "Quay lại"
     search: "Tìm kiếm"
     no_results: "Không có kết quả"
+    read_more: "Đọc thêm"
   static_page:
     home:
       people_may_interested: "Những người có thể bạn quan tâm"

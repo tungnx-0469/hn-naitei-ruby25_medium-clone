@@ -17,6 +17,7 @@ en:
     back: "Back"
     search: "Search"
     no_results: "No results found"
+    read_more: "Read more"
   static_page:
     home:
       people_may_interested: "People you may be interested in"

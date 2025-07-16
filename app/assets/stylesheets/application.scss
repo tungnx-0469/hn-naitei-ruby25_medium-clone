@@ -3,3 +3,9 @@
 @import "bootstrap";
 @import "custom";
 @import "profile";
+@import "actiontext";
+@import "article";
+
+.form-control {
+  border: 1px solid $border-color;
+}

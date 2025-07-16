@@ -1,0 +1,56 @@
+<div class="article-card">
+  <div class="article-header">
+    <div class="author-info">
+      <% if article.user.avatar.attached? && article.user.avatar.blob.persisted? %>
+        <%= image_tag article.user.avatar, class: "author-avatar", alt: "#{article.user.username}'s avatar" %>
+      <% else %>
+        <%= image_tag Settings.default_avatar, class: "author-avatar", alt: "Default avatar" %>
+      <% end %>
+      <div class="author-details">
+        <%= link_to article.user.username, profile_path(article.user), class: "author-name" %>
+        <div class="article-timestamp">
+          <i class="fas fa-clock"></i>
+          Updated <%= time_ago_in_words(article.updated_at) %> ago
+        </div>
+      </div>
+    </div>
+    <% if article.updated_at > 1.day.ago %>
+      <span class="updated-indicator">Recently Updated</span>
+    <% end %>
+  </div>
+
+  <h2 class="article-title">
+    <%= link_to article.title, article_path(article), style: "text-decoration: none; color: inherit;" %>
+  </h2>
+
+  <div class="content-preview">
+    <div class="article-content">
+      <%= article.content %>
+    </div>
+    <% if article.content.persisted? %>
+      <div class="content-fade"></div>
+    <% end %>
+  </div>
+
+  <div class="article-actions">
+    <div class="action-buttons">
+      <button class="action-btn">
+        <%= bootstrap_icon "heart", height: Settings.default.view.edit_profile.icon_size %>
+        <span><%= article.like_count %></span>
+      </button>
+      <button class="action-btn">
+        <%= bootstrap_icon "chat-dots", height: Settings.default.view.edit_profile.icon_size %>
+        <span><%= article.comments.count %></span>
+      </button>
+      <button class="action-btn">
+        <%= bootstrap_icon "share", height: Settings.default.view.edit_profile.icon_size %>
+        <span>Share</span>
+      </button>
+    </div>
+    <%= link_to article_path(article), class: "read-more-btn" do %>
+      <%= t "common.read_more" %>
+      <%= bootstrap_icon "arrow-right", height: Settings.default.view.edit_profile.icon_size %>
+    <% end %>
+  </div>
+
+</div>

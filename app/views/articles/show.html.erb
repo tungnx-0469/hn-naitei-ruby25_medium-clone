@@ -1,0 +1,17 @@
+<%= render @article %>
+
+<div id="comments" class="comments-section">
+  <h2>Comments</h2>
+  <div class="comments-list">
+    <%= render @article.comments %>
+  </div>
+  <% if current_user %>
+    <%= render "comments/form" %>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Edit this article", edit_article_path(@article) %> |
+  <%= link_to "Back to articles", articles_path %>
+  <%= button_to "Destroy this article", @article, method: :delete %>
+</div>

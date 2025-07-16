@@ -1,7 +1,9 @@
 class ProfileController < ApplicationController
   before_action :set_user, only: [:show]
   
-  def show; end
+  def show
+    @article = Article.new
+  end
 
   private
   def set_user
