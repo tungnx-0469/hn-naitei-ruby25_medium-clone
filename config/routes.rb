@@ -4,6 +4,9 @@ Rails.application.routes.draw do
       registrations: "users/registrations"
     }
     get "profile/:id", to: "profile#show", as: "profile"
+    resources :articles do
+      resources :comments, only: [:create, :destroy]
+    end
     root "static_page#home"
   end
 end

@@ -1,0 +1,11 @@
+<%= render @article %>
+
+<div id="comments" class="comments-section">
+  <h2><%= t ".comments"  %></h2>
+  <div class="comments-list">
+    <%= render @article.comments %>
+  </div>
+  <% if current_user %>
+    <%= render "comments/form" %>
+  <% end %>
+</div>
