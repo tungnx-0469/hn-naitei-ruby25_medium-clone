@@ -16,14 +16,38 @@ vi:
         bio: "Mô tả"
   header:
     home: "Trang chủ"
-    edit_profile: "Chỉnh sửa hồ sơ"
+    profile: "Hồ sơ của tôi"
     login: "Đăng nhập"
     logout: "Đăng xuất"
     sign_up: "Đăng ký"
     english: "Tiếng Anh"
     vietnamese: "Tiếng Việt"
+  common:
+    save: "Lưu"
+    cancel: "Hủy"
+    delete: "Xóa"
+    edit: "Chỉnh sửa"
+    update: "Cập nhật"
+    detail: "Chi tiết"
+    back: "Quay lại"
+    search: "Tìm kiếm"
+    no_results: "Không có kết quả"
+  static_page:
+    home:
+      people_may_interested: "Những người có thể bạn quan tâm"
+  profile:
+    show:
+      personal_info: "Thông tin cá nhân"
+      articles: "Bài viết"
+      followers: "Người theo dõi"
+      following: "Đang theo dõi"
+      phone: "Điện thoại"
+      address: "Địa chỉ"
+      birthday: "Ngày sinh"
+      about_me: "Về tôi" 
   msg:
     you_sure: "Bạn có chắc không?"
     invalid_image: "Hình ảnh không hợp lệ. Vui lòng chọn một hình ảnh có định dạng hợp lệ (JPEG, PNG, GIF)."
     image_too_large: "Hình ảnh quá lớn. Vui lòng chọn một hình ảnh có kích thước nhỏ hơn 5MB."
     invalid_phone_number: "Số điện thoại không hợp lệ. Vui lòng nhập một số điện thoại hợp lệ."
+    user_not_found: "Không tìm thấy người dùng. Vui lòng kiểm tra ID người dùng và thử lại."

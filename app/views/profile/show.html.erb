@@ -1,0 +1,76 @@
+<div class="profile-header">
+    <div class="text-center">
+        <% if @user.avatar.attached? && @user.avatar.blob.persisted? %>
+            <%= image_tag @user.avatar, class: "profile-avatar", alt: "#{@user.username}'s avatar" %>
+        <% else %>
+            <%= image_tag Settings.default_avatar, class: "profile-avatar", alt: "Default avatar" %>
+        <% end %>
+        <h1 class="profile-name"><%= @user.username %></h1>
+        <p class="profile-email">
+          <%= bootstrap_icon "envelope", height: Settings.default.view.edit_profile.icon_size %>
+          <%= @user.email %>
+        </p>
+        
+        <div class="profile-stats">
+            <div class="stat-item">
+                <span class="stat-number">42</span>
+                <span class="stat-label"><%= t ".articles" %></span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1.2K</span>
+                <span class="stat-label"><%= t ".followers" %></span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">156</span>
+                <span class="stat-label"><%= t ".following" %></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <div class="main-content">
+  <div class="profile-info">
+    <div class="info-section">
+        <h3 class="info-title">
+            <%= bootstrap_icon "info-circle", height: Settings.default.view.edit_profile.icon_size %>
+            <%= t ".personal_info" %>
+        </h3>
+        <% if @user.phone_number.present? %>
+            <div class="info-item">
+                <%= bootstrap_icon "telephone-fill", height: Settings.default.view.edit_profile.icon_size %>
+                <span class="info-label"> <%= t ".phone" %>:</span>
+                <span class="info-value"><%= @user.phone_number %></span>
+            </div>
+        <% end %>
+        <% if @user.address.present? %>
+            <div class="info-item">
+                <%= bootstrap_icon "house", height: Settings.default.view.edit_profile.icon_size %>
+                <span class="info-label"> <%= t ".address" %>:</span>
+                <span class="info-value"><%= @user.address %></span>
+            </div>
+        <% end %>
+        <% if @user.date_of_birth.present? %>
+            <div class="info-item">
+                <%= bootstrap_icon "cake", height: Settings.default.view.edit_profile.icon_size %>
+                <span class="info-label"><%= t ".birthday" %>:</span>
+                <span class="info-value"><%= @user.date_of_birth.strftime("%B %d, %Y") %></span>
+            </div>
+        <% end %>
+    </div>
+
+    <% if @user.bio.present? %>
+        <div class="info-section">
+            <h3 class="info-title">
+                <i class="fas fa-quote-left"></i>
+                <%= t ".about_me" %>
+            </h3>
+            <div class="bio-text">
+                <%= @user.bio %>
+            </div>
+        </div>
+    <% end %>
+    <% if @user.id == current_user.id %>
+        <%= link_to t("common.edit"), edit_user_registration_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+ </div>

@@ -23,3 +23,168 @@
 .avatar-wrapper label:hover .edit-overlay {
   opacity: 1;
 }
+
+.user-card {
+  width: 100%;
+  max-width: 400px;
+  background: $card-bg;
+  backdrop-filter: blur(10px);
+  border: 1px solid $border-color;
+  border-radius: 20px;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.card-header {
+  padding: 15px 25px 15px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+}
+
+.avatar-container {
+  position: relative;
+}
+
+.user-avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid $avatar-border;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.user-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.user-details h5 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: $text-dark;
+  line-height: 1.2;
+}
+
+.user-email {
+  color: $text-light;
+  font-size: 0.7rem;
+  margin: 0;
+  font-style: italic;
+  word-break: break-word;
+}
+
+.detail-btn {
+  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 5px 12px;
+  color: white;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px $btn-shadow;
+}
+
+.detail-btn:hover {
+  background: linear-gradient(135deg, $primary-color-dark 0%, $secondary-color-dark 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  color: white;
+}
+
+.detail-btn:active {
+  transform: translateY(0);
+}
+
+.card-body {
+  padding: 0 20px 20px;
+}
+
+.user-bio {
+  color: $text-muted;
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0;
+  padding: 15px;
+  background: $light-bg;
+  border-left: 4px solid $primary-color;
+  position: relative;
+}
+
+.user-bio::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 1.2rem;
+  color: $primary-color;
+  font-weight: bold;
+}
+
+.user-bio:empty::before {
+  display: none;
+}
+
+.user-bio:empty::after {
+  content: 'No bio available';
+  color: $text-placeholder;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .user-card {
+    max-width: 100%;
+    margin: 0 10px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .user-info {
+    flex-direction: column;
+    text-align: center;
+  }
+}
