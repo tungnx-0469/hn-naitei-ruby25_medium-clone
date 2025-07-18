@@ -1,0 +1,28 @@
+<div class="article-form">
+  <%= form_with(model: article, html: { class: "needs-validation" }) do |form| %>
+    <% if article.errors.any? %>
+      <div class="alert alert-danger">
+        <h2><%= t("articles.errors", count: article.errors.count) %></h2>
+        <ul>
+          <% article.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :title, class: "form-label" %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :content, class: "form-label" %>
+      <%= form.rich_text_area :content, class: "form-control" %>
+    </div>
+
+    <div>
+      <%= form.submit nil, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

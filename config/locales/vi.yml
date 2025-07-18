@@ -2,6 +2,8 @@ vi:
   activerecord:
     models:
       user: "Người dùng"
+      article: "Bài viết"
+      comment: "Bình luận"
     attributes:
       user: # Or whatever your resource_name is (e.g., admin)
         username: "Tên đăng nhập"
@@ -14,6 +16,11 @@ vi:
         phone_number: "Số điện thoại"
         date_of_birth: "Ngày sinh"
         bio: "Mô tả"
+      article:
+        title: "Tiêu đề"
+        content: "Nội dung"
+      comment:
+        content: "Nội dung"
   header:
     home: "Trang chủ"
     profile: "Hồ sơ của tôi"
@@ -32,6 +39,8 @@ vi:
     back: "Quay lại"
     search: "Tìm kiếm"
     no_results: "Không có kết quả"
+    updated_ago: "Cập nhất %{time_ago} trước"
+    read_more: "Đọc thêm"
   static_page:
     home:
       people_may_interested: "Những người có thể bạn quan tâm"
@@ -44,7 +53,15 @@ vi:
       phone: "Điện thoại"
       address: "Địa chỉ"
       birthday: "Ngày sinh"
-      about_me: "Về tôi" 
+      about_me: "Về tôi"
+  articles:
+    errors:
+      one: "1 lỗi đã ngăn không cho bài viết này được lưu:"
+      other: "%{count} lỗi đã ngăn không cho bài viết này được lưu:"
+    show:
+      comments: "Bình luận"
+      comment_placeholder: "Viết bình luận..."
+      no_comments: "Chưa có bình luận nào. Hãy là người đầu tiên bình luận!"
   msg:
     you_sure: "Bạn có chắc không?"
     invalid_image: "Hình ảnh không hợp lệ. Vui lòng chọn một hình ảnh có định dạng hợp lệ (JPEG, PNG, GIF)."
