@@ -1,0 +1,36 @@
+<div class="article-detail">
+  <div class="article-detail-header">
+    <h1 class="article-title"><%= @article.title %></h1>
+    <div class="article-meta">
+      <div class="author-info">
+        <% if @article.user.avatar.attached? %>
+          <%= image_tag @article.user.avatar, class: "author-avatar", alt: "#{@article.user.username}'s avatar" %>
+        <% else %>
+          <%= image_tag Settings.default_avatar, class: "author-avatar", alt: "Default avatar" %>
+        <% end %>
+        <div class="author-details">
+          <h5><%= link_to @article.user.username, profile_path(@article.user) %></h5>
+          <div class="text-muted">
+            <%= bootstrap_icon "clock", height: Settings.default.view.edit_profile.icon_size %>
+            <%= t "common.updated_ago", time_ago: time_ago_in_words(@article.updated_at) %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-detail-actions">
+      <button class="action-btn <%= 'liked' if current_user && current_user.like?(@article) %>">
+        <%= bootstrap_icon "heart", height: Settings.default.view.edit_profile.icon_size %>
+        <span><%= @article.favorites.count %></span>
+      </button>
+      <button class="action-btn">
+        <%= bootstrap_icon "share", height: Settings.default.view.edit_profile.icon_size %>
+        <span><%= t "common.share" %></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="article-content">
+    <%= @article.content %>
+  </div>
+</div>

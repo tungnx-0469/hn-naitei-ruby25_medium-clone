@@ -1,0 +1,8 @@
+<%= turbo_frame_tag "new_comment" do %>
+  <%= form_with model: @comment, url: article_comments_path(@article), class: "comment-form" do |f| %>
+    <h5><%= t "articles.show.leave_comment" %></h5>
+    <%= f.text_area :content, placeholder: t("articles.show.comment_placeholder"), class: "form-control border p-2" %>
+    <%= f.hidden_field :article_id, value: @article.id %>
+    <%= f.submit t("articles.show.comment_btn"), class: "btn btn-primary mt-2" %>
+  <% end %>
+<% end %>

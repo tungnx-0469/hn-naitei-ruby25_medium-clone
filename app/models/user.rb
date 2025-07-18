@@ -26,7 +26,6 @@ class User < ApplicationRecord
     users = user.present? ? where.not(id: user.id) : all
     users.limit(Settings.recommend_users_limit)
   }
-
   def follow(other_user)
     following << other_user
   end

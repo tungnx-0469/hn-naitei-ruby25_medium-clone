@@ -1,0 +1,5 @@
+<%= turbo_stream.append "comments" do %>
+  <%= render partial: "comments/comment", object: @new_comment, as: :comment %>
+<% end %>
+
+<%= turbo_stream.replace "new_comment", partial: "comments/form" %>

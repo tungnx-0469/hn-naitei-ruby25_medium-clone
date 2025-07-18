@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :authorize_modify, only: %i[edit update destroy]
 
   def show
-    @comment = @article.comments.build
+    @comment = Comment.new
   end
 
   def edit
