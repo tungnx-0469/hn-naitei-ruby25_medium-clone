@@ -36,11 +36,14 @@ vi:
     edit: "Chỉnh sửa"
     update: "Cập nhật"
     detail: "Chi tiết"
+    share: "Chia sẻ"
     back: "Quay lại"
     search: "Tìm kiếm"
     no_results: "Không có kết quả"
     updated_ago: "Cập nhất %{time_ago} trước"
+    ago: "trước"
     read_more: "Đọc thêm"
+    back: "Quay lại"
   static_page:
     home:
       people_may_interested: "Những người có thể bạn quan tâm"
@@ -59,9 +62,12 @@ vi:
       one: "1 lỗi đã ngăn không cho bài viết này được lưu:"
       other: "%{count} lỗi đã ngăn không cho bài viết này được lưu:"
     show:
+      leave_comment: "Để lại bình luận"
       comments: "Bình luận"
+      comment_btn: "Bình luận"
       comment_placeholder: "Viết bình luận..."
       no_comments: "Chưa có bình luận nào. Hãy là người đầu tiên bình luận!"
+      login_to_comment: "Vui lòng đăng nhập để để lại bình luận."
   msg:
     you_sure: "Bạn có chắc không?"
     invalid_image: "Hình ảnh không hợp lệ. Vui lòng chọn một hình ảnh có định dạng hợp lệ (JPEG, PNG, GIF)."

@@ -13,11 +13,13 @@ en:
     delete: "Delete"
     edit: "Edit"
     update: "Update"
+    share: "Share"
     detail: "Detail"
     back: "Back"
     search: "Search"
     no_results: "No results found"
     updated_ago: "Updated %{time_ago} ago"
+    ago: "ago"
     read_more: "Read more"
   static_page:
     home:
@@ -38,8 +40,11 @@ en:
       other: "%{count} errors prohibited this article from being saved:"
     show:
       comments: "Comments"
+      leave_comment: "Leave a comment"
+      comment_btn: "Comment"
       comment_placeholder: "Write a comment..."
       no_comments: "No comments yet. Be the first to comment!"
+      login_to_comment: "Please login to leave a comment."
   msg:
     you_sure: "Are you sure?"
     invalid_image: "Invalid image. Please select a valid image format (JPEG, PNG, GIF)."

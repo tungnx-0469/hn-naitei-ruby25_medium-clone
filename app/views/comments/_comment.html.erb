@@ -1,0 +1,16 @@
+<div class="comment-item">
+  <% if comment.user.present? %>
+    <div class="comment-header">
+      <% if comment.user.avatar.attached? %>
+        <%= image_tag comment.user.avatar, class: "comment-avatar", alt: "#{comment.user.username}'s avatar" %>
+      <% else %>
+        <%= image_tag Settings.default_avatar, class: "comment-avatar", alt: "Default avatar" %>
+      <% end %>
+      <div class="comment-infor">
+        <%= link_to comment.user.username, profile_path(comment.user), class: "comment-author" %>
+        <small class="comment-time"><%= time_ago_in_words(comment.created_at) %> <%= t "common.ago" %> </small>
+      </div>
+    </div>
+  <% end %>
+  <p><%= comment.content %></p>
+</div>
