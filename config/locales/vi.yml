@@ -60,6 +60,7 @@ vi:
       about_me: "Về tôi"
   articles:
     recently_updated: "Bài viết mới"
+    liked_user: "Người thích bài viết"
     errors:
       one: "1 lỗi đã ngăn không cho bài viết này được lưu:"
       other: "%{count} lỗi đã ngăn không cho bài viết này được lưu:"
@@ -90,3 +91,4 @@ vi:
     relationship_not_found: "Không tìm thấy mối quan hệ."
     permission_denied: "Bạn không có quyền thực hiện hành động này."
     record_not_found: "Không tìm thấy bản ghi."
+    article_already_favorited: "Bài viết này đã được yêu thích trước đó."

@@ -42,7 +42,7 @@ class User < ApplicationRecord
   end
 
   def like(article)
-    favorite_articles << article
+    favorites.find_or_create_by(article: article)
   end
 
   def unlike(article)

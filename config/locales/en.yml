@@ -37,6 +37,7 @@ en:
       about_me: "About Me"
   articles:
     recently_updated: "Recently Updated"
+    liked_user: "Liked Users"
     errors:
       one: "1 error prohibited this article from being saved:"
       other: "%{count} errors prohibited this article from being saved:"
@@ -67,4 +68,5 @@ en:
     relationship_not_found: "Relationship not found."
     permission_denied: "You do not have permission to perform this action."
     record_not_found: "Record not found."
+    article_already_favorited: "This article has already been favorited."
     

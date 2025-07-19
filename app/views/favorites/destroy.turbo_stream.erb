@@ -1,0 +1,3 @@
+<%= turbo_stream.update "like-form-#{@article.id}" do %>
+  <%= render partial: "shared/like", locals: { article: @article } %>
+<% end %>
