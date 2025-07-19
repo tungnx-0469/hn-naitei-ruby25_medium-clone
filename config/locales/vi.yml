@@ -69,6 +69,7 @@ vi:
       comment_placeholder: "Viết bình luận..."
       no_comments: "Chưa có bình luận nào. Hãy là người đầu tiên bình luận!"
       login_to_comment: "Vui lòng đăng nhập để để lại bình luận."
+      no_article: "Hồ sơ này chưa có bài viết nào."
   msg:
     you_sure: "Bạn có chắc không?"
     invalid_image: "Hình ảnh không hợp lệ. Vui lòng chọn một hình ảnh có định dạng hợp lệ (JPEG, PNG, GIF)."

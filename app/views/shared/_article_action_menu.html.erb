@@ -1,0 +1,21 @@
+<div class="dropdown">
+  <button class="article-dropdown-toggle" type="button" id="actionDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+    <%= bootstrap_icon "three-dots-vertical", height: Settings.default.view.edit_profile.icon_size %>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="actionDropdown">
+    <li>
+      <%= link_to edit_article_path(article), class: "dropdown-item" do %>
+        <%= bootstrap_icon "pencil", height: Settings.default.view.edit_profile.icon_size %>
+        <%= t "common.edit" %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to article_path(article), 
+            data: { turbo_method: :delete, turbo_confirm: t("msg.you_sure") },
+            class: "dropdown-item text-danger" do %>
+        <%= bootstrap_icon "trash3", height: Settings.default.view.edit_profile.icon_size %>
+        <%= t "common.delete" %>
+      <% end %>
+    </li>
+  </ul>
+</div>

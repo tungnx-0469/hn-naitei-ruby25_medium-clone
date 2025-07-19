@@ -40,12 +40,12 @@ class ArticlesController < ApplicationController
   def destroy
     if @article.destroy
       respond_to do |format|
-        format.html { redirect_to articles_path, status: :see_other, notice: t("msg.delete_article_success") }
+        format.html { redirect_to profile_path(current_user), status: :see_other, notice: t("msg.delete_article_success") }
         format.json { head :no_content }
       end
     else
       respond_to do |format|
-        format.html { redirect_to articles_path, alert: t("msg.delete_article_failed") }
+        format.html { redirect_to profile_path(current_user), alert: t("msg.delete_article_failed") }
         format.json { render json: { errors: @article.errors.full_messages }, status: :unprocessable_entity }
       end
     end
