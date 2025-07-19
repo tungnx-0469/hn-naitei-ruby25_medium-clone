@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
-  before_action :authorize_modify, only: %i[edit update destroy]
+  load_and_authorize_resource
+  before_action :authenticate_user!, except: %i[ show ]
 
   def show
     @comment = Comment.new
@@ -40,30 +40,19 @@ class ArticlesController < ApplicationController
   def destroy
     if @article.destroy
       respond_to do |format|
-        format.html { redirect_to articles_path, status: :see_other, notice: t("msg.delete_article_success") }
+        format.html { redirect_to profile_path(current_user), status: :see_other, notice: t("msg.delete_article_success") }
         format.json { head :no_content }
       end
     else
       respond_to do |format|
-        format.html { redirect_to articles_path, alert: t("msg.delete_article_failed") }
+        format.html { redirect_to profile_path(current_user), alert: t("msg.delete_article_failed") }
         format.json { render json: { errors: @article.errors.full_messages }, status: :unprocessable_entity }
       end
     end
   end
 
   private
-    def set_article
-      @article = Article.find_by(id: params[:id])
-      return if @article
-
-      redirect_to root_path, alert: t("msg.article_not_found")
-    end
-
-    def article_params
-      params.require(:article).permit(Article::PERMITTED_ATTIBUTES)
-    end
-
-    def authorize_modify
-      authorize! :modify, @article
-    end
+  def article_params
+    params.require(:article).permit(Article::PERMITTED_ATTIBUTES)
+  end
 end

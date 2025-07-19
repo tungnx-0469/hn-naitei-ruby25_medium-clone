@@ -14,9 +14,15 @@
         </div>
       </div>
     </div>
-    <% if article.updated_at > 1.day.ago %>
-      <span class="updated-indicator">Recently Updated</span>
-    <% end %>
+
+    <div class="d-flex align-items-center gap-2">
+      <% if article.updated_at > 1.day.ago %>
+        <span class="updated-indicator"><%= t "articles.recently_updated" %></span>
+      <% end %>
+      <% if article.user == current_user %>
+        <%= render "shared/article_action_menu", article: article %>
+      <% end %>
+    </div>
   </div>
 
   <h2 class="article-title">

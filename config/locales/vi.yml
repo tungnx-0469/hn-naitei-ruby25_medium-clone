@@ -59,6 +59,7 @@ vi:
       birthday: "Ngày sinh"
       about_me: "Về tôi"
   articles:
+    recently_updated: "Bài viết mới"
     errors:
       one: "1 lỗi đã ngăn không cho bài viết này được lưu:"
       other: "%{count} lỗi đã ngăn không cho bài viết này được lưu:"
@@ -69,6 +70,7 @@ vi:
       comment_placeholder: "Viết bình luận..."
       no_comments: "Chưa có bình luận nào. Hãy là người đầu tiên bình luận!"
       login_to_comment: "Vui lòng đăng nhập để để lại bình luận."
+      no_article: "Hồ sơ này chưa có bài viết nào."
   msg:
     you_sure: "Bạn có chắc không?"
     invalid_image: "Hình ảnh không hợp lệ. Vui lòng chọn một hình ảnh có định dạng hợp lệ (JPEG, PNG, GIF)."
@@ -86,4 +88,5 @@ vi:
     update_comment_failed: "Cập nhật bình luận không thành công."
     delete_comment_failed: "Xóa bình luận không thành công."
     relationship_not_found: "Không tìm thấy mối quan hệ."
-    
+    permission_denied: "Bạn không có quyền thực hiện hành động này."
+    record_not_found: "Không tìm thấy bản ghi."

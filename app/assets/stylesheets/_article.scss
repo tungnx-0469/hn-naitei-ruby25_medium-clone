@@ -212,6 +212,16 @@
   font-weight: 500;
 }
 
+.article-dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+}
+
+.article-dropdown-toggle:hover {
+  background-color: rgba(102, 126, 234, 0.1);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .article-header {
