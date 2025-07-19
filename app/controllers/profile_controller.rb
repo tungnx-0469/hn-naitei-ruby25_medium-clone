@@ -1,8 +1,19 @@
 class ProfileController < ApplicationController
-  before_action :set_user, only: [ :show ]
-
+  before_action :set_user
   def show
     @article = Article.new
+  end
+
+  def followers
+    @users = @user.followers
+    @title = t "profile.show.followers"
+    render "relationships_list"
+  end
+
+  def following
+    @users = @user.following
+    @title = t "profile.show.following"
+    render "relationships_list"
   end
 
   private
