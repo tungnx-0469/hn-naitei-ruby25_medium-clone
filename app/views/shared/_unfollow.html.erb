@@ -1,0 +1,7 @@
+<%= form_for(current_user.active_relationships.find_by(followed_id: @user.id),
+  html: {method: :delete}) do |f| %>
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+    <%= bootstrap_icon "person-fill-dash", height: Settings.default.view.edit_profile.icon_size %>
+    Unfollow
+  <% end %>
+<% end %>

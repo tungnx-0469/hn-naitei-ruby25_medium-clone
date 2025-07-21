@@ -17,3 +17,9 @@
 .btn-primary:hover {
   background-color: $primary-color-dark;
 }
+
+#follow_form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

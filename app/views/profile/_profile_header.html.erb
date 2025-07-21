@@ -1,0 +1,36 @@
+<div class="profile-header">
+    <div class="text-center">
+        <% if @user.avatar.attached? && @user.avatar.blob.persisted? %>
+            <%= image_tag @user.avatar, class: "profile-avatar", alt: "#{@user.username}'s avatar" %>
+        <% else %>
+            <%= image_tag Settings.default_avatar, class: "profile-avatar", alt: "Default avatar" %>
+        <% end %>
+        <h1 class="profile-name"><%= @user.username %></h1>
+        <p class="profile-email">
+          <%= bootstrap_icon "envelope", height: Settings.default.view.edit_profile.icon_size %>
+          <%= @user.email %>
+        </p>
+        
+        <div class="profile-stats">
+            <div class="stat-item">
+                <%= link_to profile_path(@user), class: "stat-number" do %>
+                    <%= @user.articles.count %>
+                <% end %>
+                <span class="stat-label"><%= t "profile.show..articles" %></span>
+            </div>
+            <div class="stat-item">
+                <%= link_to profile_followers_path(@user), class: "stat-number", id: "followers" do %>
+                    <%= @user.followers.count %>
+                <% end %>
+                <span class="stat-label"><%= t "profile.show.followers" %></span>
+            </div>
+            <div class="stat-item">
+                <%= link_to profile_following_path(@user), class: "stat-number", id: "followers" do %>
+                    <%= @user.following.count %>
+                <% end %>
+                <span class="stat-label"><%= t "profile.show..following" %></span>
+            </div>
+        </div>
+    </div>
+    <%= render "shared/follow_form" if user_signed_in? %>
+</div>

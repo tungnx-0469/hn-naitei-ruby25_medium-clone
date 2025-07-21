@@ -25,6 +25,7 @@ en:
     home:
       people_may_interested: "People you may be interested in"
   profile:
+    no_relationships: "No relationships found."
     show:
       personal_info: "Personal Information"
       articles: "Articles"
@@ -61,3 +62,5 @@ en:
     comment_deleted: "Comment deleted successfully."
     update_comment_failed: "Failed to update comment."
     delete_comment_failed: "Failed to delete comment."
+    relationship_not_found: "Relationship not found."
+    

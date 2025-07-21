@@ -48,6 +48,7 @@ vi:
     home:
       people_may_interested: "Những người có thể bạn quan tâm"
   profile:
+    no_relationships: "Không có mối quan hệ nào"
     show:
       personal_info: "Thông tin cá nhân"
       articles: "Bài viết"
@@ -84,4 +85,5 @@ vi:
     comment_deleted: "Bình luận đã được xóa thành công."
     update_comment_failed: "Cập nhật bình luận không thành công."
     delete_comment_failed: "Xóa bình luận không thành công."
+    relationship_not_found: "Không tìm thấy mối quan hệ."
     

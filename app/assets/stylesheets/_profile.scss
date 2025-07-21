@@ -60,6 +60,13 @@
   font-weight: 700;
   color: $primary-color;
   display: block;
+  text-decoration: none;
+}
+
+.stat-number:hover {
+  color: $secondary-color;
+  transition: color 0.3s ease;
+  text-decoration: underline;
 }
 
 .stat-label {
@@ -140,4 +147,15 @@
   line-height: 1.6;
   color: $text-muted;
   margin-top: 10px;
+}
+
+.relationships-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.followers-title {
+  margin-bottom: 15px;
 }
