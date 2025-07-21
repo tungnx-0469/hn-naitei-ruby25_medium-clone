@@ -1,5 +1,12 @@
 class ProfileController < ApplicationController
-  before_action :set_user
+  before_action :set_user, except: %i(index)
+
+  def index
+    @user_q = User.ransack(params[:user_q])
+    @pagy, @users = pagy @user_q.result.includes(avatar_attachment: :blob),
+                         limit: Settings.user_per_page
+  end
+
   def show
     @article = Article.new
   end

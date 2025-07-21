@@ -1,0 +1,5 @@
+<%= search_form_for @q , url: search_path,  class: "search-form" do |f| %>
+  <%= f.search_field :title_or_content_body_or_user_username_cont, placeholder: t("header.search_placehoder") %>
+
+  <%= f.submit t("header.search"), class: "btn btn-primary" %>
+<% end %>

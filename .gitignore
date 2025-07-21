@@ -42,3 +42,4 @@
 /config/application.yml
 
 /Procfile.dev
+/.vscode

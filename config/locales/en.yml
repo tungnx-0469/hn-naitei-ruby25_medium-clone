@@ -5,8 +5,11 @@ en:
     login: "Login"
     logout: "Logout"
     sign_up: "Sign Up"
+    profiles: "Profiles"
     english: "English"
     vietnamese: "Vietnamese"
+    search_placehoder: "Search articles..."
+    search: "Search"
   common:
     save: "Save"
     cancel: "Cancel"
@@ -24,8 +27,17 @@ en:
   static_page:
     home:
       people_may_interested: "People you may be interested in"
+    searh_result:
+      title: "Search Results"
+      no_results: "No results found for your search."
+      from: "from"
+      to: "to"
+      filter: "Filter"
   profile:
     no_relationships: "No relationships found."
+    index:
+      user_list: "User List"
+      search_placeholder: "Search by username, bio, phone, or address"
     show:
       personal_info: "Personal Information"
       articles: "Articles"

@@ -23,3 +23,28 @@
   justify-content: center;
   margin-top: 20px;
 }
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+
+  input[type="search"] {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid $border-color;
+    border-radius: 15px;
+  }
+
+  input[type="search"]:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 5px rgba($primary-color, 0.5);
+    outline: none;
+  }
+
+  input[type="submit"] {
+    width: auto;
+  }
+}

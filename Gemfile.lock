@@ -214,6 +214,7 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     ostruct (0.6.2)
+    pagy (9.3.5)
     parallel (1.27.0)
     parser (3.3.8.0)
       ast (~> 2.4.1)
@@ -278,6 +279,10 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.3.0)
+    ransack (4.3.0)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rdoc (6.14.2)
       erb
       psych (>= 4.0.0)
@@ -408,10 +413,12 @@ DEPENDENCIES
   jbuilder
   kamal
   mysql2
+  pagy
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.2)
   rails-i18n
+  ransack
   rubocop-rails-omakase
   selenium-webdriver
   solid_cable

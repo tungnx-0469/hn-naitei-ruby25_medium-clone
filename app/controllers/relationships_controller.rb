@@ -6,7 +6,7 @@ class RelationshipsController < ApplicationController
   def create
     current_user.follow(@user)
     respond_to do |format|
-      format.html { redirect_to profile_path(@user) }
+      format.html{redirect_to profile_path(@user)}
       format.turbo_stream
     end
   end
@@ -15,7 +15,7 @@ class RelationshipsController < ApplicationController
     @user = @relationship.followed
     current_user.unfollow(@user)
     respond_to do |format|
-      format.html { redirect_to profile_path(@user) }
+      format.html{redirect_to profile_path(@user)}
       format.turbo_stream
     end
   end

@@ -7,9 +7,9 @@ class FavoritesController < ApplicationController
       flash[:notice] = t "msg.article_already_favorited"
       return redirect_to request.referer || root_path
     end
-    
+
     respond_to do |format|
-      format.html { redirect_to article_path(@article) }
+      format.html{redirect_to article_path(@article)}
       format.turbo_stream
     end
   end
@@ -18,7 +18,7 @@ class FavoritesController < ApplicationController
     current_user.unlike(@article)
     respond_to do |format|
       format.turbo_stream
-      format.html { redirect_to article_path(@article) }
+      format.html{redirect_to article_path(@article)}
     end
   end
 end

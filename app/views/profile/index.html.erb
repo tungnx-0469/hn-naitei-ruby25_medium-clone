@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <h2 class="mb-4"><%= t ".user_list" %></h2>
+
+  <%= search_form_for @user_q, url: profiles_path, method: :get, class: "mb-4 row g-3 align-items-center", as: :user_q do |f| %>
+    <div class="col-auto flex-grow-1">
+      <%= f.search_field :username_or_bio_or_address_or_phone_number_cont, class: "form-control", placeholder:  t(".search_placeholder") %>
+    </div>
+
+    <div class="col-auto">
+      <%= f.submit t("common.search"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= sort_link @user_q, :username %>
+  </div>
+  
+
+  <div class="relationships-grid">
+    <%= render partial: "shared/user_card", collection: @users, as: :user %>
+  </div>
+  <div class="d-flex justify-content-center my-4">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>

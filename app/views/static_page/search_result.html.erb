@@ -1,0 +1,41 @@
+<div class="container">
+  <%= search_form_for @q, url: request.path, method: :get, html: { class: "mb-3" } do |f| %>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="mb-0">
+        <%= t ".title" %> 
+        <span class="text-primary">(<%= @articles.count %>)</span>
+      </h3>
+
+      <div class="d-flex gap-2 align-items-center" data-controller="date-filter">
+        <div>
+          <%= f.label :created_at_gteq, t(".from"), class: "me-1" %>
+          <%= f.date_field :created_at_gteq, class: "form-control d-inline-block w-auto",
+            data: { date_filter_target: "from", action: "change->date-filter#updateToMin" } %>
+        </div>
+        <div>
+          <%= f.label :created_at_lteq, t(".to"), class: "me-1" %>
+          <%= f.date_field :created_at_lteq, class: "form-control d-inline-block w-auto",
+            data: { date_filter_target: "to", action: "change->date-filter#updateFromMax" } %>
+        </div>
+
+        <div class="ms-3">
+          <%= sort_link(@q, :title) %> |
+          <%= sort_link(@q, :created_at) %>
+        </div>
+
+        <%= f.submit t(".filter"), class: "btn btn-primary ms-3" %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @articles.count == 0 %>
+    <div class="alert alert-info">
+      <%= t ".no_results" %>
+    </div>
+  <% else %>
+    <%= render partial:"shared/article_card", collection: @articles, as: :article %>
+  <% end %>
+  <div class="d-flex justify-content-center">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>  
+</div>
