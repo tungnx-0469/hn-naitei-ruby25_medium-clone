@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
   before_action :set_ransack_query
   before_action :set_locale
   before_action :load_notifications, if: :user_signed_in?
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 167749e (create notification function with sidekiq)
   def set_locale
     locale = params[:locale].to_s.strip.to_sym
     I18n.locale = if I18n.available_locales.include?(locale)
@@ -25,7 +29,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound do |_exception|
     redirect_to root_path, alert: t("msg.record_not_found")
   end
-
+  
   private
   def set_ransack_query
     @q = Article.ransack(params[:q])
