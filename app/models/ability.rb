@@ -14,6 +14,9 @@ class Ability
     can :modify, Comment, user_id: user.id
     can :create, Relationship, follower_id: user.id
     can :destroy, Relationship, follower_id: user.id
+    can :read, Notification, user_id: user.id
+    can :mark_read_all, Notification, user_id: user.id
+    can :destroy, Notification, user_id: user.id
     can :modify, User, id: user.id
   end
 end

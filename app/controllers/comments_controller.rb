@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 
     if @new_comment.save
       @comment = @article.comments.build
+      send_notification_to_author if current_user.id != @article.user.id
       respond_to do |format|
         format.turbo_stream
         format.html{redirect_to request.referer}
@@ -66,5 +67,14 @@ class CommentsController < ApplicationController
       end
       format.html{redirect_to article_path(@article)}
     end
+  end
+
+  def send_notification_to_author
+    UserNotiJob.perform_async(
+      @article.user.id,
+      t("notification.new_comment", article: @article.title),
+      "Comment",
+      @new_comment.id
+    )
   end
 end

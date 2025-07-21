@@ -17,6 +17,7 @@ gem "mysql2"
 gem "pagy"
 gem "rails-i18n"
 gem "ransack"
+gem "sidekiq"
 
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"

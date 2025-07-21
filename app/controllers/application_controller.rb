@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
   before_action :set_ransack_query
   before_action :set_locale
+  before_action :load_notifications, if: :user_signed_in?
+
   def set_locale
     locale = params[:locale].to_s.strip.to_sym
     I18n.locale = if I18n.available_locales.include?(locale)
@@ -27,5 +29,9 @@ class ApplicationController < ActionController::Base
   private
   def set_ransack_query
     @q = Article.ransack(params[:q])
+  end
+
+  def load_notifications
+    @notifications = current_user.notifications.includes(:notifiable).recent
   end
 end
