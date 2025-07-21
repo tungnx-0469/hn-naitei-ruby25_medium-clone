@@ -24,9 +24,6 @@
           <li class="nav-item">
             <%= link_to t('header.profiles'), profiles_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to t('header.profiles'), profiles_path, class: "nav-link" %>
-          </li>
           <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to t("header.profile"), profile_path(current_user), class: "nav-link" %>
