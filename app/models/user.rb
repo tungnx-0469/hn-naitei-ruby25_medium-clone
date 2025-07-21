@@ -16,6 +16,7 @@ foreign_key: :followed_id, dependent: :destroy
   has_many :articles, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_articles, through: :favorites, source: :article
+  has_many :notifications, dependent: :destroy
 
   validates :username, presence: true
   validates :phone_number,
@@ -32,7 +33,7 @@ foreign_key: :followed_id, dependent: :destroy
     users.limit(Settings.recommend_users_limit)
   }
   def follow other_user
-    following << other_user
+    active_relationships.find_or_create_by(followed_id: other_user.id)
   end
 
   def unfollow other_user

@@ -10,6 +10,8 @@ en:
     vietnamese: "Vietnamese"
     search_placehoder: "Search articles..."
     search: "Search"
+    notifications: "Notifications"
+    delete_all: "Delete All"
   common:
     save: "Save"
     cancel: "Cancel"
@@ -61,6 +63,11 @@ en:
       no_comments: "No comments yet. Be the first to comment!"
       login_to_comment: "Please login to leave a comment."
       no_article: "This profile has no articles yet."
+  notification:
+    no_notifications: "No notifications"
+    article_favorited: "Your article '%{article}' has been favorited."
+    user_followed: "%{user} has followed you."
+    new_comment: "You have a new comment on '%{article}'."
   msg:
     you_sure: "Are you sure?"
     invalid_image: "Invalid image. Please select a valid image format (JPEG, PNG, GIF)."
