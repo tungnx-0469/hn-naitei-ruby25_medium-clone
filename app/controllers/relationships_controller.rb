@@ -5,6 +5,14 @@ class RelationshipsController < ApplicationController
 
   def create
     current_user.follow(@user)
+
+    UserNotiJob.perform_async(
+      @user.id,
+      t("notification.user_followed", user: current_user.username),
+      "User",
+      current_user.id
+    )
+
     respond_to do |format|
       format.html{redirect_to profile_path(@user)}
       format.turbo_stream
