@@ -32,8 +32,8 @@
   margin: 0 auto;
 
   input[type="search"] {
-    width: 300px;
-    padding: 5px;
+    width: 320px;
+    padding: 7px;
     border: 1px solid $border-color;
     border-radius: 15px;
   }
@@ -46,6 +46,7 @@
 
   input[type="submit"] {
     width: auto;
+    border-radius: 12px;
   }
 }
 

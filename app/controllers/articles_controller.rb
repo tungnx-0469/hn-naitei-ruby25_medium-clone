@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @article.comments.includes(user: {avatar_attachment: :blob})
+    @comments = @article.comments.includes(user: { avatar_attachment: :blob }).where(parent_id: nil)
   end
 
   def edit; end
@@ -54,7 +54,7 @@ class ArticlesController < ApplicationController
       respond_to do |format|
         format.html do
           redirect_to profile_path(current_user), status: :see_other,
-notice: t("msg.delete_article_success")
+                      notice: t("msg.delete_article_success")
         end
         format.json{head :no_content}
       end
