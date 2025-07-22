@@ -36,6 +36,7 @@ en:
       birthday: "Birthday"
       about_me: "About Me"
   articles:
+    recently_updated: "Recently Updated"
     errors:
       one: "1 error prohibited this article from being saved:"
       other: "%{count} errors prohibited this article from being saved:"
@@ -46,6 +47,7 @@ en:
       comment_placeholder: "Write a comment..."
       no_comments: "No comments yet. Be the first to comment!"
       login_to_comment: "Please login to leave a comment."
+      no_article: "This profile has no articles yet."
   msg:
     you_sure: "Are you sure?"
     invalid_image: "Invalid image. Please select a valid image format (JPEG, PNG, GIF)."
@@ -63,4 +65,6 @@ en:
     update_comment_failed: "Failed to update comment."
     delete_comment_failed: "Failed to delete comment."
     relationship_not_found: "Relationship not found."
+    permission_denied: "You do not have permission to perform this action."
+    record_not_found: "Record not found."
     

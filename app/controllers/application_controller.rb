@@ -11,4 +11,12 @@ class ApplicationController < ActionController::Base
   def default_url_options
     { locale: I18n.locale }
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_path, alert: t("msg.permission_denied")
+  end
+
+   rescue_from ActiveRecord::RecordNotFound do |exception|
+    redirect_to root_path, alert: t("msg.record_not_found")
+  end
 end

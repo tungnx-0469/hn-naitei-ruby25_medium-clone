@@ -1,0 +1,5 @@
+<%= link_to :back, class: "return-btn" do %>
+  <%= bootstrap_icon "arrow-left", height: Settings.default.view.edit_profile.icon_size %>
+  <span><%= t "common.back" %></span>
+<% end %>
+<%= render partial: "form", locals: { article: @article } %>

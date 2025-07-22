@@ -1,6 +1,7 @@
 class RelationshipsController < ApplicationController
   before_action :load_relationship, only: :destroy
   before_action :load_user, only: :create
+  before_action :authenticate_user!
 
   def create
     current_user.follow(@user)
