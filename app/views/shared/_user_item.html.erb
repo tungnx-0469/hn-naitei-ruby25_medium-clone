@@ -1,0 +1,8 @@
+<div class="d-flex align-items-center mb-2">
+  <% if user.avatar.attached? %>
+    <%= image_tag user.avatar.variant(resize_to_limit: Settings.user_item_avtar_size), class: "rounded-circle me-2", alt: "#{user.username}'s avatar" %>
+  <% else %>
+    <%= image_tag Settings.default_avatar, class: "rounded-circle me-2", width: 32, height: 32, alt: "Default avatar" %>
+  <% end %>
+  <%= link_to user.username, profile_path(user), class: "text-decoration-none" %>
+</div>

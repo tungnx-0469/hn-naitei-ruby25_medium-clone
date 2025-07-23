@@ -490,3 +490,20 @@
 .comment-actions a:hover {
   text-decoration: underline;
 }
+
+.view-details-button {
+  top: -55%;
+  width: 100px;
+  position: absolute;
+  text-align: left;
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  color: $primary-color;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.view-details-button:hover {
+  text-decoration: underline;
+}

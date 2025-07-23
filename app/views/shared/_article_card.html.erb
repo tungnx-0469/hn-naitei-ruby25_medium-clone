@@ -40,10 +40,14 @@
 
   <div class="article-actions">
     <div class="action-buttons">
-      <button class="action-btn">
-        <%= bootstrap_icon "heart", height: Settings.default.view.edit_profile.icon_size %>
-        <span><%= article.like_count %></span>
-      </button>
+      <% if user_signed_in? %>
+        <%= render "shared/like_form", article: article %>
+      <% else %>
+        <%= link_to new_user_session_path, class: "action-btn" do %>
+          <%= bootstrap_icon "heart", height: Settings.default.view.edit_profile.icon_size %>
+          <span><%= article.like_count %></span>
+        <% end %>
+      <% end %>
       <button class="action-btn">
         <%= bootstrap_icon "chat-dots", height: Settings.default.view.edit_profile.icon_size %>
         <span><%= article.comments.count %></span>

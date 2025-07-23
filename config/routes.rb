@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
     resources :articles do
       resources :comments, only: [ :create, :edit, :update, :destroy ]
+      resources :favorites, only: %i[create destroy]
     end
     resources :relationships, only: %i[create destroy]
     root "static_page#home"

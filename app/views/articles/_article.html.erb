@@ -24,10 +24,19 @@
     </div>
 
     <div class="article-detail-actions">
-      <button class="action-btn <%= 'liked' if current_user && current_user.like?(@article) %>">
-        <%= bootstrap_icon "heart", height: Settings.default.view.edit_profile.icon_size %>
-        <span><%= @article.favorites.count %></span>
-      </button>
+      <div class="position-relative d-inline-block">
+        <% if user_signed_in? %>
+          <%= render "shared/like_form", article: article %>
+        <% else %>
+          <%= link_to new_user_session_path, class: "action-btn" do %>
+            <%= bootstrap_icon "heart", height: Settings.default.view.edit_profile.icon_size %>
+            <span><%= article.like_count %></span>
+          <% end %>
+        <% end %>
+        <button class="view-details-button" data-bs-toggle="modal" data-bs-target="#likedUsersModal" aria-label="Show liked users">
+          <%= t("common.detail") %>
+        </button>
+      </div>
       <button class="action-btn">
         <%= bootstrap_icon "share", height: Settings.default.view.edit_profile.icon_size %>
         <span><%= t "common.share" %></span>
@@ -39,3 +48,5 @@
     <%= @article.content %>
   </div>
 </div>
+
+<%= render "shared/liked_user_list", article: @article %>
