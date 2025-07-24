@@ -57,7 +57,7 @@
     <% end %>
     <div class="articles-list">
       <% if @user.articles.any? %>
-        <%= render partial:"shared/article_card", collection: @user.articles, as: :article %>
+        <%= render partial:"shared/article_card", collection: @articles, as: :article %>
       <% else %>
         <p class="text-center"><%= t ".no_articles" %></p>
       <% end %>

@@ -1,7 +1,8 @@
 class StaticPageController < ApplicationController
   def home
     @users = User.recommend_users current_user
-    @pagy, @articles = pagy Article.recent.includes(:user, :comments),
+    @pagy, @articles = pagy Article.recent.includes(:user,
+                                                    :rich_text_content),
                             limit: Settings.article_per_page
   end
 

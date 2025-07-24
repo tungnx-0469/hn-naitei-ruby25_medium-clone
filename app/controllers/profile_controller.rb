@@ -9,16 +9,18 @@ class ProfileController < ApplicationController
 
   def show
     @article = Article.new
+    @articles = @user.articles.recent
+                     .includes(:rich_text_content)
   end
 
   def followers
-    @users = @user.followers
+    @users = @user.followers.includes(:avatar_attachment)
     @title = t "profile.show.followers"
     render "relationships_list"
   end
 
   def following
-    @users = @user.following
+    @users = @user.following.includes(:avatar_attachment)
     @title = t "profile.show.following"
     render "relationships_list"
   end
