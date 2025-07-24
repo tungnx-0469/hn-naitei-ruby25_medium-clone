@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       @comment = @article.comments.build
       respond_to do |format|
         format.turbo_stream
-        format.html { redirect_to request.referer }
+        format.html{redirect_to request.referer}
       end
     else
       render turbo_stream: turbo_stream.replace(
@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
       flash[:notice] = t "msg.comment_updated"
       respond_to do |format|
         format.turbo_stream
-        format.html { redirect_to article_path(@article) }
+        format.html{redirect_to article_path(@article)}
       end
     else
       flash[:alert] = t "msg.update_comment_failed"
@@ -43,23 +43,28 @@ class CommentsController < ApplicationController
     end
   end
 
-
   def destroy
     @article = @comment.article
     if @comment.destroy
-      flash[:notice] = t "msg.comment_deleted"
-      respond_to do |format|
-        format.turbo_stream { render turbo_stream: turbo_stream.remove("comment_form_#{@comment.id}") }
-        format.html { redirect_to article_path(@article) }
-      end
+      handle_successful_destroy
     else
-      flash[:alert] = t "msg.delete_comment_failed"
-      redirect_to request.referer || root_path
+      flash[:alert] = t("msg.delete_comment_failed")
+      redirect_to article_path(@article)
     end
   end
 
   private
   def comment_params
     params.require(:comment).permit(Comment::PERMIT_PARAMS)
+  end
+
+  def handle_successful_destroy
+    flash[:notice] = t("msg.comment_deleted")
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.remove("comment_form_#{@comment.id}")
+      end
+      format.html{redirect_to article_path(@article)}
+    end
   end
 end
