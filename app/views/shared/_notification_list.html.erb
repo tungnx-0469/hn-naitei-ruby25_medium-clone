@@ -1,0 +1,43 @@
+<div class="dropdown">
+  <button class="noti-toggle" data-bs-toggle="dropdown">
+    <%= bootstrap_icon "bell-fill", height: Settings.default.view.edit_profile.icon_size %>
+    <span class="badge bg-danger noti-badge"><%=  @notifications.unread.count %></span>
+  </button>
+  <div class="dropdown-menu dropdown-menu-end noti-list">
+    <div>
+      <h6 class="dropdown-header">
+        <%= t "header.notifications" %>
+        <span class="badge bg-secondary"><%= @notifications.count %></span>
+      </h6>
+      <div class="dropdown-header text-end">
+       
+      </div>
+    </div>
+    <% if @notifications.any? %>
+      <ul class="list-unstyled mb-0">
+        <% @notifications.order(created_at: :desc).limit(5).each do |noti| %>
+          <%= form_with url: read_notification_path(noti) do %>
+            <button type="submit" class="dropdown-item <%= 'fw-bold' unless noti.read %>">
+              <%= truncate(noti.message, length: 50) %>
+              <br>
+              <small class="text-muted"><%= time_ago_in_words(noti.created_at) %> <%= t "common.ago" %></small>
+            </button>
+          <% end %>
+        <% end %>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <%= form_with url: read_all_notifications_path, method: :post do %>
+            <button type="submit" class="dropdown-item small text-center">
+              <%= bootstrap_icon "trash-fill", height: Settings.default.view.edit_profile.icon_size %>
+              <%= t("header.read_all") %>
+            </button>
+          <% end %>
+        </li>
+      </ul>
+    <% else %>
+      <div class="dropdown-item text-center text-muted">
+        <%= t "notification.no_notifications" %>
+      </div>
+    <% end %>
+  </div>
+</div>
