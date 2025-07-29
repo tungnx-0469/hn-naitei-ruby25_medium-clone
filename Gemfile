@@ -3,6 +3,7 @@ source "https://rubygems.org"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.2"
 
+gem "active_model_serializers"
 gem "active_storage_validations", "0.9.8"
 gem "bootstrap", "~> 5.3.3"
 gem "bootstrap-icons-helper"
@@ -13,8 +14,11 @@ gem "devise", "~> 4.1"
 gem "faker"
 gem "figaro"
 gem "image_processing", "1.12.2"
+gem "jwt"
 gem "mysql2"
 gem "pagy"
+gem "rack-attack"
+gem "rack-cors"
 gem "rails-i18n"
 gem "ransack"
 gem "sidekiq"
@@ -68,11 +72,11 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
   gem "factory_bot_rails"
   gem "rails-controller-testing"
   gem "rspec-rails"
   gem "simplecov"
+  gem "web-console"
 end
 
 group :test do
