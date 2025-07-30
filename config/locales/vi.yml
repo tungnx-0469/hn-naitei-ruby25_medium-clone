@@ -114,3 +114,5 @@ vi:
     permission_denied: "Bạn không có quyền thực hiện hành động này."
     record_not_found: "Không tìm thấy bản ghi."
     article_already_favorited: "Bài viết này đã được yêu thích trước đó."
+    article_favorited: "Bài viết đã được yêu thích thành công."
+    article_unfavorited: "Đã bỏ yêu thích bài viết."

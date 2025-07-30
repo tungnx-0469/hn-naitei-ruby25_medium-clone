@@ -24,4 +24,30 @@ Rails.application.routes.draw do
     get "search", to: "static_page#search_result", as: :search
     root "static_page#home"
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :profiles, only: [:index, :show] do
+        member do
+          get :followers
+          get :following
+        end
+      end
+      resources :auth do
+        collection do
+          post :login
+          post :register
+          get :my_profile
+          put :update_profile
+          get :refresh_token
+          delete :logout
+        end
+      end
+      resources :articles, except: [:new, :edit] do
+        resources :comments, only: [:create, :update, :destroy]
+        resources :favorites, only: [:create, :destroy]
+      end
+      resources :relationships, only: [:create, :destroy]
+    end
+  end
 end
